@@ -101,4 +101,3 @@ def create_column(table_name, **kwargs):
     commit()
     
     
-
