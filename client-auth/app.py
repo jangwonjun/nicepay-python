@@ -4,8 +4,8 @@ import requests
 import uuid
 import json
 
-clientId = 'S1_6eaa0db1afdc41f3becb770878d67d25'
-secretKey = 'e80d068e400649a6ada66777fa350d40'
+clientId = 'S1_f23eac193e4a4a0f8efbb800439e62d9'
+secretKey = '4dcbf5bfe58d498c95095f1cea381596'
 
 app = Flask(__name__)
 
