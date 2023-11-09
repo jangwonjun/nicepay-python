@@ -41,6 +41,7 @@ def submit_quantity_3():
     menu_count.append(menu_count_order_3)
     return "수량이 전송되었습니다."
 
+
 @app.route('/order',methods=['POST'])
 def order():
     final_menu_text = ''.join(final_menu)
