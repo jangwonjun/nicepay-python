@@ -39,6 +39,7 @@ def submit_quantity_3():
     quantity_3 = 'A' + quantity_3
     final_menu.append(quantity_3)
     menu_count.append(menu_count_order_3)
+    
     return "수량이 전송되었습니다."
 
 
