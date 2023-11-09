@@ -48,6 +48,7 @@ def order():
     final_menu_text = ''.join(final_menu)
     return final_menu_text
 
+
 @app.route('/final_pay',methods=['POST'])
 def final_order():
     print(final_menu)
