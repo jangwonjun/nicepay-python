@@ -204,6 +204,7 @@
                         data: { quantity_3: quantity_3 },
                         success: function(response) {
                             alert("장바구니에 추가되었습니다!");
+                            
                         },
                         error: function(error) {
                             alert("오류가 발생했습니다. 새로고침이 필요합니다.");
@@ -211,6 +212,7 @@
                     });
                 }
             </script>
+            
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
               </div>
@@ -231,17 +233,19 @@
 
   </div>
   <!-- /.container -->
+  
+
   <form action="/final_pay", method="post">
-  <button type="button">최종 결제하기</button>
+  <button type="submit">장바구니 보기</button>
         <ul>
           {% for item in final_menu %}
-              <li>최종 주문 내역 : {{ item }}</li>
+              <li>상품 주문 내역 : {{ item }}</li>
           {% endfor %}
       </ul>
   </form>
 
   <form action="/discard", method="post">
-  <button type="button">메뉴 초기화</button>
+  <button type="submit">메뉴 초기화</button>
         <p>{{discard_message}}</p>
   </form>
   <!-- Footer -->
