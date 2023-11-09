@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <title>PoPcorn Project</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet ">
+
+  <!-- Custom styles for this template -->
+  <link href="static/css/shop-homepage.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Menu
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">로그인</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+        <div class="row">
+        <form action="/caramel", method="post">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">카라멜 팝콘</a>
+                </h4>
+                <h5>700원</h5>
+                <p class="card-text">카라멜 팝콘을 한번 먹으면 <br> 소원이 없겠구만 그래!</p>
+              </div>
+              <label for="quantity_1"></label>
+              <input type="number" id="quantity_1" value="0">
+              <button type="button" onclick="increaseQuantity_1()">+</button>
+              <button type="button" onclick="decreaseQuantity_1()">-</button>
+              <button type="button" onclick="submitQuantity_1()">구매하기</button>
+              <script>
+                  function increaseQuantity_1() {
+                      var quantityInput = document.getElementById('quantity_1');
+                      var currentQuantity = parseInt(quantityInput.value);
+                      quantityInput.value = currentQuantity + 1;
+                  }
+          
+                  function decreaseQuantity_1() {
+                      var quantityInput = document.getElementById('quantity_1');
+                      var currentQuantity = parseInt(quantityInput.value);
+                      if (currentQuantity > 0) {
+                          quantityInput.value = currentQuantity - 1;
+                      }
+                  }
+                  function submitQuantity_1() {
+                    var quantityInput = document.getElementById('quantity_1');
+                    var quantity_1 = quantityInput.value;
+                    
+                    $.ajax({
+                        type: "POST",
+                        url: "/submit_quantity_1",
+                        data: { quantity_1: quantity_1 },
+                        success: function(response) {
+                            alert("장바구니에 추가되었습니다!");
+                        },
+                        error: function(error) {
+                            alert("오류가 발생했습니다. 새로고침이 필요합니다.");
+                        }
+                    });
+                }
+            </script>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <form action="/cheese", method="post">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">치즈 팝콘</a>
+                </h4>
+                <h5>700원</h5>
+                <p class="card-text">서버도 내돈으로 돌리는데 <br> 후원좀 해주이소!</p>
+              </div>
+              <label for="quantity_2"></label>
+              <input type="number" id="quantity_2" value="0">
+              <button type="button" onclick="increaseQuantity_2()">+</button>
+              <button type="button" onclick="decreaseQuantity_2()">-</button>
+              <button type="button" onclick="submitQuantity_2()">구매하기</button>
+              <script>
+                  function increaseQuantity_2() {
+                      var quantityInput = document.getElementById('quantity_2');
+                      var currentQuantity = parseInt(quantityInput.value);
+                      quantityInput.value = currentQuantity + 1;
+                  }
+          
+                  function decreaseQuantity_2() {
+                      var quantityInput = document.getElementById('quantity_2');
+                      var currentQuantity = parseInt(quantityInput.value);
+                      if (currentQuantity > 0) {
+                          quantityInput.value = currentQuantity - 1;
+                      }
+                  }
+                  function submitQuantity_2() {
+                    var quantityInput = document.getElementById('quantity_2');
+                    var quantity_2 = quantityInput.value;
+                    
+                    $.ajax({
+                        type: "POST",
+                        url: "/submit_quantity_2",
+                        data: { quantity_2: quantity_2 },
+                        success: function(response) {
+                            alert("장바구니에 추가되었습니다!");
+                        },
+                        error: function(error) {
+                            alert("오류가 발생했습니다. 새로고침이 필요합니다.");
+                        }
+                    });
+                }
+            </script>
+
+
+    
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+          
+        </form>
+
+        <form action="/ade1", method="post">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">딸기 에이드</a>
+                </h4>
+                <h5>2000원</h5>
+                <p class="card-text">쿠팡에서 시켰어요! <br> 마진이 남아야 하니 <br>  많이 사주이소!</p>
+              </div>
+              <label for="quantity_3"></label>
+              <input type="number" id="quantity_3" value="0">
+              <button type="button" onclick="increaseQuantity_3()">+</button>
+              <button type="button" onclick="decreaseQuantity_3()">-</button>
+              <button type="button" onclick="submitQuantity_3()">구매하기</button>
+              <script>
+                  function increaseQuantity_3() {
+                      var quantityInput = document.getElementById('quantity_3');
+                      var currentQuantity = parseInt(quantityInput.value);
+                      quantityInput.value = currentQuantity + 1;
+                  }
+          
+                  function decreaseQuantity_3() {
+                      var quantityInput = document.getElementById('quantity_3');
+                      var currentQuantity = parseInt(quantityInput.value);
+                      if (currentQuantity > 0) {
+                          quantityInput.value = currentQuantity - 1;
+                      }
+                  }
+                  function submitQuantity_3() {
+                    var quantityInput = document.getElementById('quantity_3');
+                    var quantity_3 = quantityInput.value;
+                    
+                    $.ajax({
+                        type: "POST",
+                        url: "/submit_quantity_3",
+                        data: { quantity_3: quantity_3 },
+                        success: function(response) {
+                            alert("장바구니에 추가되었습니다!");
+                        },
+                        error: function(error) {
+                            alert("오류가 발생했습니다. 새로고침이 필요합니다.");
+                        }
+                    });
+                }
+            </script>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+        
+        </form>
+          
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+  <form action="/final_pay", method="post">
+  <button type="button">최종 결제하기</button>
+        <ul>
+          {% for item in final_menu %}
+              <li>최종 주문 내역 : {{ item }}</li>
+          {% endfor %}
+      </ul>
+  </form>
+
+  <form action="/discard", method="post">
+  <button type="button">메뉴 초기화</button>
+        <p>{{discard_message}}</p>
+  </form>
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">ActiveJang</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
