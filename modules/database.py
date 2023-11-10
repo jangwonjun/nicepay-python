@@ -21,6 +21,7 @@ def get_db_direct():
     conn = pymysql.connect(
         host=SQL.HOST, port=SQL.PORT, user=SQL.ID, passwd=SQL.PASSWORD, charset='utf8'
     )
+    print("DATABASE에 연결되었습니다.")
     return conn, conn.cursor()
 
 

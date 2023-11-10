@@ -66,3 +66,5 @@ class User(UserMixin, RDMS):
     def create(name, phone_number):
         create_column(User.TABLE_NAME, name=name, phone_number=phone_number)
         
+        
+    
